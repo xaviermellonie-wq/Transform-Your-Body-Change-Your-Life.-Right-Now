@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transform Your Body, Change Your Life. Start now</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+
+    :root {
+      --ink: #1a1a1a;
+      --ink-s: #4a4a4a;
+      --ink-m: #7a7a7a;
+      --sage: #5a7247;
+      --sage-d: #3d5230;
+      --sage-l: #e9efe5;
+      --olive: #6b7c52;
+      --sand: #f7f4ef;
+      --sand-w: #f0ebe2;
+      --clay: #c4a882;
+      --clay-d: #8b7355;
+      --linen: #faf9f6;
+      --stone: #d4d0c8;
+      --blush: #e8d5d0;
+      --blush-d: #9e7b73;
+      --water: #7a9eb8;
+      --water-l: #dce8f0;
+      --plum: #7b6b8a;
+      --plum-l: #e8e2ed;
+      --wh: #ffffff;
+      --bdr: rgba(0,0,0,0.06);
+      --s1: 0 1px 3px rgba(0,0,0,0.04);
+      --s2: 0 4px 20px rgba(0,0,0,0.06);
+      --s3: 0 8px 40px rgba(0,0,0,0.08);
+      --r: 16px;
+      --rl: 24px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--linen); color: var(--ink);
+      line-height: 1.8; -webkit-font-smoothing: antialiased;
+    }
+    ::selection { background: var(--sage-l); color: var(--sage-d); }
+
+    /* === NAV === */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(250,249,246,0.92); backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--bdr);
+      padding: 0 40px; height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 20px; color: var(--sage-d); text-decoration: none;
+    }
+    .nav-right { display: flex; align-items: center; gap: 24px; }
+    .nm { display: flex; gap: 24px; list-style: none; }
+    .nm a {
+      font-size: 12px; font-weight: 500; color: var(--ink-m);
+      text-decoration: none; letter-spacing: 0.5px; transition: 0.3s;
+    }
+    .nm a:hover { color: var(--sage); }
+
+    /* LANG TOGGLE */
+    .lang-toggle {
+      display: flex; border-radius: 100px; overflow: hidden;
+      border: 1.5px solid var(--stone); background: var(--wh);
+    }
+    .lang-btn {
+      padding: 6px 14px; font-size: 11px; font-weight: 600;
+      border: none; background: transparent; cursor: pointer;
+      color: var(--ink-m); transition: 0.3s; letter-spacing: 0.5px;
+    }
+    .lang-btn.active {
+      background: var(--sage-d); color: white;
+    }
+
+    /* === HERO === */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      justify-content: center; text-align: center;
+      padding: 120px 24px 80px;
+      background: linear-gradient(180deg, var(--linen), var(--sand));
+    }
+    .hi { max-width: 740px; }
+    .hero .ol {
+      font-size: 11px; font-weight: 600; letter-spacing: 5px;
+      text-transform: uppercase; color: var(--sage); margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(36px, 6vw, 60px);
+      line-height: 1.1; color: var(--ink); margin-bottom: 24px;
+    }
+    .hero h1 em {
+      font-family: 'Lora', serif; font-style: italic; color: var(--sage);
+    }
+    .hi > p {
+      font-size: 17px; color: var(--ink-s);
+      max-width: 540px; margin: 0 auto 40px; line-height: 1.9;
+    }
+    .ha { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+    /* === BUTTONS === */
+    .btn {
+      padding: 13px 30px; border-radius: 100px; font-size: 13px;
+      font-weight: 600; text-decoration: none; transition: 0.3s;
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .btn-p { background: var(--sage-d); color: white; border: 1.5px solid var(--sage-d); }
+    .btn-p:hover { background: transparent; color: var(--sage-d); }
+    .btn-s { background: transparent; color: var(--ink-s); border: 1.5px solid var(--stone); }
+    .btn-s:hover { border-color: var(--sage); color: var(--sage); }
+
+    /* === LAYOUT === */
+    .con { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 90px 0; }
+
+    .sl {
+      font-size: 11px; font-weight: 600; letter-spacing: 4px;
+      text-transform: uppercase; color: var(--sage); margin-bottom: 14px;
+    }
+    .st {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(26px, 4vw, 38px);
+      color: var(--ink); margin-bottom: 14px; line-height: 1.2;
+    }
+    .sd { font-size: 15px; color: var(--ink-m); max-width: 580px; line-height: 1.8; }
+    .sec-h { margin-bottom: 50px; }
+    .sec-h.c { text-align: center; }
+    .sec-h.c .sd { margin: 0 auto; }
+
+    /* === CARD === */
+    .cd {
+      background: var(--wh); border-radius: var(--rl); padding: 44px;
+      margin-bottom: 28px; border: 1px solid var(--bdr);
+      box-shadow: var(--s1); transition: 0.35s;
+    }
+    .cd:hover { box-shadow: var(--s2); transform: translateY(-2px); }
+    .cd[data-a="sage"] { border-left: 3px solid var(--sage); }
+    .cd[data-a="clay"] { border-left: 3px solid var(--clay); }
+    .cd[data-a="blush"] { border-left: 3px solid var(--blush-d); }
+    .cd[data-a="water"] { border-left: 3px solid var(--water); }
+    .cd[data-a="plum"] { border-left: 3px solid var(--plum); }
+    .cd h2 { font-family: 'DM Serif Display', serif; font-size: 26px; color: var(--ink); margin-bottom: 14px; }
+    .cd h3 {
+      font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--sage-d);
+      margin-top: 32px; margin-bottom: 10px; padding-top: 20px;
+      border-top: 1px solid var(--bdr);
+    }
+    .cd h3:first-of-type { border-top: none; padding-top: 0; }
+    .cd h4 { font-size: 14px; font-weight: 600; color: var(--olive); margin-top: 18px; margin-bottom: 5px; }
+    .cd p { font-size: 14px; color: var(--ink-s); margin-bottom: 10px; line-height: 1.85; }
+
+    /* === CALLOUT === */
+    .co { padding: 18px 22px; border-radius: 12px; margin-top: 22px; }
+    .co-s { background: var(--sage-l); }
+    .co-w { background: var(--sand-w); }
+    .co-b { background: rgba(232,213,208,0.35); }
+    .co-p { background: var(--plum-l); }
+    .co strong { font-size: 13px; display: block; margin-bottom: 4px; color: var(--ink); }
+    .co p { font-size: 13px; color: var(--ink-s); margin: 0; }
+
+    /* === GRIDS === */
+    .g2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 22px; }
+    .g3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
+
+    /* === IMAGE CARD === */
+    .ic {
+      background: var(--wh); border-radius: var(--rl); overflow: hidden;
+      border: 1px solid var(--bdr); box-shadow: var(--s1); transition: 0.35s;
+    }
+    .ic:hover { box-shadow: var(--s3); transform: translateY(-5px); }
+    .ic .th { overflow: hidden; height: 210px; }
+    .ic img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+    .ic:hover img { transform: scale(1.03); }
+    .ic .ct { padding: 22px; }
+    .ic .ct h3 {
+      font-family: 'DM Serif Display', serif; font-size: 19px;
+      color: var(--ink); margin-bottom: 6px; border: none; padding: 0;
+    }
+    .ic .ct h4 { font-size: 13px; font-weight: 600; color: var(--olive); margin-top: 14px; margin-bottom: 4px; }
+    .ic .ct p { font-size: 13px; color: var(--ink-m); margin-bottom: 6px; line-height: 1.7; }
+
+    /* === TAGS === */
+    .tgs { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 12px; }
+    .tg { padding: 3px 10px; border-radius: 100px; font-size: 10px; font-weight: 600; }
+    .tg-s { background: var(--sage-l); color: var(--sage-d); }
+    .tg-w { background: var(--sand-w); color: var(--clay-d); }
+    .tg-u { background: var(--water-l); color: var(--water); }
+    .tg-b { background: rgba(232,213,208,0.5); color: var(--blush-d); }
+
+    /* === CALORIE === */
+    .cal {
+      display: inline-block; margin-top: 10px; padding: 4px 12px;
+      border-radius: 100px; font-size: 11px; font-weight: 700;
+      background: var(--sage-l); color: var(--sage-d);
+    }
+    .mac { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 6px; }
+    .mac span { font-size: 10px; color: var(--ink-m); background: var(--sand); padding: 2px 8px; border-radius: 6px; }
+
+    /* === TABLE === */
+    .sch { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 13px; }
+    .sch th {
+      text-align: left; padding: 12px 14px; font-size: 10px; font-weight: 600;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--sage-d); background: var(--sage-l);
+    }
+    .sch th:first-child { border-radius: 10px 0 0 0; }
+    .sch th:last-child { border-radius: 0 10px 0 0; }
+    .sch td { padding: 12px 14px; color: var(--ink-s); border-bottom: 1px solid var(--bdr); }
+    .sch tr:hover td { background: var(--sand); }
+
+    /* === SELF-CARE === */
+    .sc-ban {
+      background: var(--sand-w); border-radius: var(--rl);
+      padding: 64px 36px; text-align: center; margin-bottom: 40px;
+      border: 1px solid var(--bdr);
+    }
+    .sc-ban .ov { font-family: 'Lora', serif; font-style: italic; font-size: 17px; color: var(--blush-d); margin-bottom: 10px; }
+    .sc-ban h2 { font-family: 'DM Serif Display', serif; font-size: clamp(26px, 4vw, 40px); color: var(--ink); margin-bottom: 14px; }
+    .sc-ban p { font-size: 15px; color: var(--ink-s); max-width: 540px; margin: 0 auto; }
+
+    .scc {
+      background: var(--wh); border-radius: var(--r); padding: 24px;
+      border: 1px solid var(--bdr); box-shadow: var(--s1); transition: 0.3s;
+    }
+    .scc:hover { box-shadow: var(--s2); transform: translateY(-3px); }
+    .sci { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 14px; }
+    .sci.s { background: var(--sage-l); }
+    .sci.b { background: rgba(232,213,208,0.4); }
+    .sci.u { background: var(--water-l); }
+    .sci.p { background: var(--plum-l); }
+    .sci.w { background: var(--sand-w); }
+    .scc h3 { font-family: 'DM Serif Display', serif; font-size: 17px; color: var(--ink); margin-bottom: 6px; }
+    .scc h4 { font-size: 12px; font-weight: 600; color: var(--olive); margin-top: 12px; margin-bottom: 3px; }
+    .scc p { font-size: 12px; color: var(--ink-m); margin-bottom: 5px; }
+
+    /* === ROUTINE === */
+    .rc { background: var(--wh); border-radius: var(--r); padding: 24px; border: 1px solid var(--bdr); }
+    .rc h3 { font-family: 'DM Serif Display', serif; font-size: 17px; color: var(--ink); margin-bottom: 14px; }
+    .ri { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--bdr); font-size: 13px; color: var(--ink-s); }
+    .ri:last-child { border-bottom: none; }
+    .rt { font-weight: 600; color: var(--sage-d); min-width: 48px; font-size: 12px; }
+
+    /* === BREATHE === */
+    .br-w { text-align: center; padding: 28px 0; }
+    .br {
+      width: 90px; height: 90px; border-radius: 50%;
+      background: var(--sage-l); border: 2px solid var(--sage);
+      margin: 0 auto 10px; display: flex; align-items: center; justify-content: center;
+      font-family: 'Lora', serif; font-style: italic; font-size: 13px; color: var(--sage-d);
+      animation: breathe 8s ease-in-out infinite;
+    }
+    @keyframes breathe {
+      0%, 100% { transform: scale(0.8); opacity: 0.6; }
+      30%, 55% { transform: scale(1.2); opacity: 1; }
+    }
+
+    /* === QUOTE === */
+    .qu { padding: 64px 24px; text-align: center; }
+    .qu blockquote {
+      font-family: 'Lora', serif; font-style: italic;
+      font-size: clamp(18px, 3vw, 26px); color: var(--ink);
+      max-width: 600px; margin: 0 auto 10px; line-height: 1.5;
+    }
+    .qu cite { font-family: 'Inter', sans-serif; font-style: normal; font-size: 12px; color: var(--ink-m); }
+    .dv { width: 36px; height: 1px; background: var(--stone); margin: 10px auto; }
+
+    /* === CHECKLIST === */
+    .ck { list-style: none; padding: 0; }
+    .ck li {
+      padding: 9px 0; font-size: 14px; color: var(--ink-s);
+      border-bottom: 1px solid var(--bdr); display: flex; align-items: center; gap: 10px;
+    }
+    .ck li::before { content: ""; width: 16px; height: 16px; border-radius: 4px; border: 1.5px solid var(--sage); flex-shrink: 0; }
+
+    /* === FOOTER === */
+    footer { background: var(--ink); color: white; text-align: center; padding: 44px 24px; }
+    footer .fl { font-family: 'DM Serif Display', serif; font-size: 20px; margin-bottom: 8px; color: var(--sage-l); }
+    footer p { font-size: 12px; color: rgba(255,255,255,0.35); margin-bottom: 3px; }
+
+    /* === LANG VISIBILITY === */
+    .lang-en { display: none; }
+    body.en .lang-id { display: none; }
+    body.en .lang-en { display: block; }
+    body.en .lang-en-inline { display: inline; }
+    body.en .lang-id-inline { display: none; }
+    body:not(.en) .lang-en-inline { display: none; }
+    body:not(.en) .lang-id-inline { display: inline; }
+
+    /* Fix for flex/grid children */
+    body.en .lang-en.flex-item { display: flex; }
+    body.en .lang-en.grid-show { display: grid; }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 16px; }
+      .nm { display: none; }
+      .cd { padding: 24px; }
+      .g2, .g3 { grid-template-columns: 1fr; }
+      .sc-ban { padding: 40px 20px; }
+      section { padding: 56px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="logo">HealthyLife</a>
+    <div class="nav-right">
+      <ul class="nm">
+        <li><a href="#why"><span class="lang-id-inline">Mengapa</span><span class="lang-en-inline">Why</span></a></li>
+        <li><a href="#exercise"><span class="lang-id-inline">Olahraga</span><span class="lang-en-inline">Exercise</span></a></li>
+        <li><a href="#food"><span class="lang-id-inline">Nutrisi</span><span class="lang-en-inline">Nutrition</span></a></li>
+        <li><a href="#selfcare">Self-Care</a></li>
+        <li><a href="#start"><span class="lang-id-inline">Mulai</span><span class="lang-en-inline">Start</span></a></li>
+      </ul>
+      <div class="lang-toggle">
+        <button class="lang-btn active" id="btn-id" onclick="setLang('id')">ID</button>
+        <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hi">
+
+      <!-- ID -->
+      <div class="lang-id">
+        <p class="ol">Panduan Hidup Sehat</p>
+        <h1>Transform Your Body,<br><em>Change Your Life.</em><br>Start Today</h1>
+        <p>
+          Ini bukan soal penampilan. Ini tentang membangun versi terbaik
+          dari diri Anda — dengan kebiasaan kecil yang dilakukan secara konsisten setiap hari.
+        </p>
+        <div class="ha">
+          <a href="#start" class="btn btn-p">Mulai Perjalanan</a>
+          <a href="#selfcare" class="btn btn-s">Self-Care</a>
+        </div>
+      </div>
+
+      <!-- EN -->
+      <div class="lang-en">
+        <p class="ol">A Guide to Healthy Living</p>
+        <h1>Transform Your Body,<br><em>Change Your Life.</em><br>Start Today</h1>
+        <p>
+          This isn't about looks. It's about building the best version of yourself
+          — through small, consistent habits done every single day.
+        </p>
+        <div class="ha">
+          <a href="#start" class="btn btn-p">Start Your Journey</a>
+          <a href="#selfcare" class="btn btn-s">Self-Care</a>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- WHY -->
+  <section id="why">
+    <div class="con">
+
+      <!-- ID -->
+      <div class="lang-id">
+        <div class="sec-h">
+          <p class="sl">Memahami Alasannya</p>
+          <h2 class="st">Mengapa Transformasi Tubuh Itu Penting</h2>
+          <p class="sd">Tubuh yang sehat bukan tujuan akhir — ini fondasi untuk kehidupan yang lebih bermakna.</p>
+        </div>
+        <div class="cd" data-a="sage">
+          <h2>Dampak Transformasi pada Kehidupan</h2>
+          <p>Ketika tubuh lebih sehat, pikiran lebih jernih, emosi lebih stabil, dan semangat hidup meningkat. Data Harvard Medical School menunjukkan orang aktif memiliki risiko 35% lebih rendah terkena penyakit jantung dan 40% lebih rendah terkena diabetes tipe 2.</p>
+
+          <h3>Manfaat Kesehatan Fisik</h3>
+          <p>Olahraga rutin dan pola makan sehat membuat tubuh bugar, kuat, dan tidak mudah sakit.</p>
+          <h4>Meningkatkan Kekuatan dan Stamina</h4>
+          <p>Aktivitas fisik teratur memperkuat otot, meningkatkan daya tahan, dan membuat aktivitas harian terasa lebih ringan.</p>
+          <h4>Menjaga Berat Badan Ideal</h4>
+          <p>Pola makan seimbang dan olahraga membantu membakar kalori efektif, mengurangi risiko diabetes dan kolesterol tinggi.</p>
+          <h4>Memperkuat Sistem Imun</h4>
+          <p>Peredaran darah yang lancar membantu sel imun bekerja optimal melawan infeksi dan penyakit.</p>
+          <h4>Menjaga Kesehatan Jantung</h4>
+          <p>Kardio memperkuat otot jantung, melancarkan aliran darah, dan menurunkan tekanan darah.</p>
+
+          <h3>Pertumbuhan Mental dan Emosional</h3>
+          <p>Saat tubuh aktif, otak melepaskan endorfin, serotonin, dan dopamin yang meningkatkan mood dan mengurangi kecemasan.</p>
+          <h4>Meningkatkan Percaya Diri</h4>
+          <p>Perubahan positif pada tubuh membuat Anda lebih nyaman dan optimis menghadapi tantangan.</p>
+          <h4>Mengurangi Stres</h4>
+          <p>Olahraga menurunkan kortisol, membuat pikiran tenang, dan tidur lebih nyenyak.</p>
+          <h4>Melatih Disiplin</h4>
+          <p>Konsistensi berolahraga mengajarkan kedisiplinan yang terbawa ke aspek kehidupan lain.</p>
+          <h4>Meningkatkan Kualitas Tidur</h4>
+          <p>Tubuh aktif di siang hari memiliki kualitas tidur yang jauh lebih baik di malam hari.</p>
+
+          <div class="co co-s">
+            <strong>Fakta WHO</strong>
+            <p>Aktivitas fisik 150 menit/minggu mengurangi risiko kematian dini 33% dan risiko depresi 26%.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- EN -->
+      <div class="lang-en">
+        <div class="sec-h">
+          <p class="sl">Understanding The Why</p>
+          <h2 class="st">Why Transforming Your Body Matters</h2>
+          <p class="sd">A healthy body isn't the destination — it's the foundation for a more meaningful life.</p>
+        </div>
+        <div class="cd" data-a="sage">
+          <h2>The Impact of Transformation on Life</h2>
+          <p>When your body gets healthier, your mind becomes clearer, emotions more stable, and motivation increases. Harvard Medical School data shows active people have 35% lower risk of heart disease and 40% lower risk of type 2 diabetes.</p>
+
+          <h3>Physical Health Benefits</h3>
+          <p>Regular exercise and healthy eating make your body fitter, stronger, and more resistant to illness.</p>
+          <h4>Increased Strength and Stamina</h4>
+          <p>Regular physical activity strengthens muscles, builds endurance, and makes daily activities feel lighter.</p>
+          <h4>Maintaining Ideal Weight</h4>
+          <p>Balanced nutrition and exercise help burn calories effectively, reducing the risk of diabetes and high cholesterol.</p>
+          <h4>Stronger Immune System</h4>
+          <p>Better blood circulation helps immune cells work optimally to fight infections and diseases.</p>
+          <h4>Heart Health</h4>
+          <p>Cardio strengthens the heart muscle, improves blood flow, and lowers blood pressure.</p>
+
+          <h3>Mental and Emotional Growth</h3>
+          <p>When your body is active, the brain releases endorphins, serotonin, and dopamine that boost mood and reduce anxiety.</p>
+          <h4>Increased Confidence</h4>
+          <p>Positive changes in your body make you more comfortable and optimistic facing challenges.</p>
+          <h4>Stress Reduction</h4>
+          <p>Exercise lowers cortisol, calms the mind, and improves sleep quality.</p>
+          <h4>Building Discipline</h4>
+          <p>Consistent exercise teaches discipline that carries over into other areas of life.</p>
+          <h4>Better Sleep Quality</h4>
+          <p>An active body during the day leads to significantly better sleep at night.</p>
+
+          <div class="co co-s">
+            <strong>WHO Fact</strong>
+            <p>150 minutes of physical activity per week reduces premature death risk by 33% and depression risk by 26%.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- QUOTE 1 -->
+  <div class="qu">
+    <blockquote>The body achieves what the mind believes.</blockquote>
+    <div class="dv"></div>
+    <cite class="lang-id">Mulailah percaya bahwa Anda bisa berubah</cite>
+    <cite class="lang-en">Start believing that you can change</cite>
+  </div>
+
+  <!-- EXERCISE -->
+  <section id="exercise" style="background:var(--sand);">
+    <div class="con">
+
+      <!-- ID -->
+      <div class="lang-id">
+        <div class="sec-h c">
+          <p class="sl">Panduan Olahraga</p>
+          <h2 class="st">Olahraga yang Wajib Dilakukan</h2>
+          <p class="sd">Setiap jenis olahraga punya manfaat berbeda. Pilih yang sesuai kemampuan Anda.</p>
+        </div>
+      </div>
+      <!-- EN -->
+      <div class="lang-en">
+        <div class="sec-h c">
+          <p class="sl">Exercise Guide</p>
+          <h2 class="st">Essential Exercises You Should Do</h2>
+          <p class="sd">Each type of exercise has different benefits. Choose what suits your ability.</p>
+        </div>
+      </div>
+
+      <div class="g2">
+
+        <article class="ic">
+          <div class="th"><img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=600&q=80"alt="Jogging"></div>
+          <div class="ct">
+            <h3>Jogging</h3>
+            <div class="lang-id">
+              <p>Kardio paling sederhana namun efektif untuk membakar kalori, memperkuat jantung, dan meningkatkan suasana hati.</p>
+              <h4>Cara Melakukan</h4><p>Jalan cepat 5 menit → jogging 20-30 menit → pendinginan dan peregangan.</p>
+              <h4>Manfaat</h4><p>Membakar 300-400 kalori, memperkuat otot kaki, meningkatkan kapasitas paru-paru.</p>
+            </div>
+            <div class="lang-en">
+              <p>The simplest yet most effective cardio for burning calories, strengthening the heart, and boosting mood.</p>
+              <h4>How to Do It</h4><p>Brisk walk 5 min → jog 20-30 min → cool down and stretch.</p>
+              <h4>Benefits</h4><p>Burns 300-400 calories, strengthens leg muscles, increases lung capacity.</p>
+            </div>
+            <div class="tgs"><span class="tg tg-s"><span class="lang-id-inline">Pemula</span><span class="lang-en-inline">Beginner</span></span><span class="tg tg-u">30 min</span><span class="tg tg-w">300-400 kal</span></div>
+          </div>
+        </article>
+
+        <article class="ic">
+          <div class="th"><img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=600" alt="Strength"></div>
+          <div class="ct">
+            <h3 class="lang-id">Latihan Kekuatan</h3>
+            <h3 class="lang-en">Strength Training</h3>
+            <div class="lang-id">
+              <p>Membangun massa otot, meningkatkan metabolisme, dan membentuk postur tubuh lebih baik.</p>
+              <h4>Cara Melakukan</h4><p>Push up, squat, lunges, atau dumbbell. 3 set × 10-15 repetisi.</p>
+              <h4>Variasi</h4><p>Bicep curl, shoulder press, deadlift ringan, plank, dumbbell row.</p>
+            </div>
+            <div class="lang-en">
+              <p>Builds muscle mass, increases metabolism, and shapes better body posture.</p>
+              <h4>How to Do It</h4><p>Push ups, squats, lunges, or dumbbells. 3 sets × 10-15 reps.</p>
+              <h4>Variations</h4><p>Bicep curl, shoulder press, light deadlift, plank, dumbbell row.</p>
+            </div>
+            <div class="tgs"><span class="tg tg-w"><span class="lang-id-inline">Menengah</span><span class="lang-en-inline">Intermediate</span></span><span class="tg tg-u">30-45 min</span></div>
+          </div>
+        </article>
+
+        <article class="ic">
+          <div class="th"><img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600" alt="Yoga"></div>
+          <div class="ct">
+            <h3>Yoga</h3>
+            <div class="lang-id">
+              <p>Gerakan + pernapasan + meditasi. Meningkatkan fleksibilitas, postur, dan ketenangan pikiran.</p>
+              <h4>Gerakan Pemula</h4><p>Mountain Pose, Downward Dog, Warrior, Child's Pose. 15-30 detik per posisi.</p>
+              <h4>Waktu Terbaik</h4><p>Pagi saat perut kosong atau malam sebelum tidur.</p>
+            </div>
+            <div class="lang-en">
+              <p>Movement + breathing + meditation. Improves flexibility, posture, and mental calmness.</p>
+              <h4>Beginner Poses</h4><p>Mountain Pose, Downward Dog, Warrior, Child's Pose. 15-30 sec each.</p>
+              <h4>Best Time</h4><p>Morning on empty stomach or evening before bed.</p>
+            </div>
+            <div class="tgs"><span class="tg tg-s"><span class="lang-id-inline">Pemula</span><span class="lang-en-inline">Beginner</span></span><span class="tg tg-u">20-40 min</span></div>
+          </div>
+        </article>
+
+        <article class="ic">
+          <div class="th"><img src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?auto=format&fit=crop&w=600&q=80" alt="Cycling"></div>
+          <div class="ct">
+            <h3 class="lang-id">Bersepeda</h3>
+            <h3 class="lang-en">Cycling</h3>
+            <div class="lang-id">
+              <p>Kardio menyenangkan dan ramah sendi. Efektif membakar lemak dan memperkuat otot kaki.</p>
+              <h4>Tips</h4><p>Mulai rute datar 5-10 km, tingkatkan bertahap.</p>
+              <h4>Target</h4><p>3-4× seminggu, 30-60 menit, 400-600 kalori per sesi.</p>
+            </div>
+            <div class="lang-en">
+              <p>Fun and joint-friendly cardio. Effective for burning fat and strengthening leg muscles.</p>
+              <h4>Tips</h4><p>Start with flat routes 5-10 km, gradually increase.</p>
+              <h4>Target</h4><p>3-4× per week, 30-60 minutes, 400-600 calories per session.</p>
+            </div>
+            <div class="tgs"><span class="tg tg-s"><span class="lang-id-inline">Pemula</span><span class="lang-en-inline">Beginner</span></span><span class="tg tg-u">30-60 min</span><span class="tg tg-w">400-600 kal</span></div>
+          </div>
+        </article>
+
+        <article class="ic">
+          <div class="th"><img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?w=600" alt="Swimming"></div>
+          <div class="ct">
+            <h3 class="lang-id">Berenang</h3>
+            <h3 class="lang-en">Swimming</h3>
+            <div class="lang-id">
+              <p>Full-body exercise, melatih hampir semua otot. Baik untuk kardio dan ramah sendi.</p>
+              <h4>Gaya</h4><p>Gaya bebas (pemula), gaya dada (pernapasan), kupu-kupu (tantangan).</p>
+              <h4>Kalori</h4><p>200-400 kalori per 30 menit.</p>
+            </div>
+            <div class="lang-en">
+              <p>Full-body exercise, works almost every muscle. Great for cardio and joint-friendly.</p>
+              <h4>Styles</h4><p>Freestyle (beginner), breaststroke (breathing), butterfly (challenge).</p>
+              <h4>Calories</h4><p>200-400 calories per 30 minutes.</p>
+            </div>
+            <div class="tgs"><span class="tg tg-w"><span class="lang-id-inline">Menengah</span><span class="lang-en-inline">Intermediate</span></span><span class="tg tg-u">30-45 min</span></div>
+          </div>
+        </article>
+
+        <article class="ic">
+          <div class="th"><img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=600" alt="HIIT"></div>
+          <div class="ct">
+            <h3>HIIT</h3>
+            <div class="lang-id">
+              <p>Intensitas tinggi dengan istirahat singkat. Afterburn effect membakar lemak berjam-jam setelah latihan.</p>
+              <h4>Gerakan</h4><p>Burpees, jumping jacks, mountain climbers, high knees, squat jumps.</p>
+              <h4>Peringatan</h4><p>Maksimal 2-3× seminggu. Hari istirahat wajib.</p>
+            </div>
+            <div class="lang-en">
+              <p>High intensity with short rest. Afterburn effect burns fat for hours after training.</p>
+              <h4>Movements</h4><p>Burpees, jumping jacks, mountain climbers, high knees, squat jumps.</p>
+              <h4>Warning</h4><p>Maximum 2-3× per week. Rest days are mandatory.</p>
+            </div>
+            <div class="tgs"><span class="tg tg-b"><span class="lang-id-inline">Lanjutan</span><span class="lang-en-inline">Advanced</span></span><span class="tg tg-u">15-25 min</span></div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- SCHEDULE -->
+      <div class="cd" data-a="clay" style="margin-top:36px;">
+        <div class="lang-id">
+          <h2>Jadwal Latihan Mingguan</h2>
+          <p>Jadwal seimbang antara latihan dan istirahat untuk hasil optimal.</p>
+        </div>
+        <div class="lang-en">
+          <h2>Weekly Training Schedule</h2>
+          <p>Balanced schedule between training and rest for optimal results.</p>
+        </div>
+
+        <!-- ID TABLE -->
+        <table class="sch lang-id">
+          <thead><tr><th>Hari</th><th>Aktivitas</th><th>Durasi</th><th>Level</th></tr></thead>
+          <tbody>
+            <tr><td>Senin</td><td>Jogging + Stretching</td><td>30 min</td><td>Ringan</td></tr>
+            <tr><td>Selasa</td><td>Kekuatan Tubuh Atas</td><td>40 min</td><td>Sedang</td></tr>
+            <tr><td>Rabu</td><td>Yoga / Istirahat Aktif</td><td>30 min</td><td>Ringan</td></tr>
+            <tr><td>Kamis</td><td>Sepeda / Renang</td><td>45 min</td><td>Sedang</td></tr>
+            <tr><td>Jumat</td><td>HIIT</td><td>20 min</td><td>Tinggi</td></tr>
+            <tr><td>Sabtu</td><td>Kekuatan Tubuh Bawah</td><td>40 min</td><td>Sedang</td></tr>
+            <tr><td>Minggu</td><td>Istirahat / Jalan Santai</td><td>—</td><td>Ringan</td></tr>
+          </tbody>
+        </table>
+
+        <!-- EN TABLE -->
+        <table class="sch lang-en">
+          <thead><tr><th>Day</th><th>Activity</th><th>Duration</th><th>Level</th></tr></thead>
+          <tbody>
+            <tr><td>Monday</td><td>Jogging + Stretching</td><td>30 min</td><td>Light</td></tr>
+            <tr><td>Tuesday</td><td>Upper Body Strength</td><td>40 min</td><td>Medium</td></tr>
+            <tr><td>Wednesday</td><td>Yoga / Active Rest</td><td>30 min</td><td>Light</td></tr>
+            <tr><td>Thursday</td><td>Cycling / Swimming</td><td>45 min</td><td>Medium</td></tr>
+            <tr><td>Friday</td><td>HIIT</td><td>20 min</td><td>High</td></tr>
+            <tr><td>Saturday</td><td>Lower Body Strength</td><td>40 min</td><td>Medium</td></tr>
+            <tr><td>Sunday</td><td>Full Rest / Walk</td><td>—</td><td>Light</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOD -->
+  <section id="food">
+    <div class="con">
+      <div class="lang-id">
+        <div class="sec-h c">
+          <p class="sl">Nutrisi</p>
+          <h2 class="st">Makanan Sehat yang Wajib Dikonsumsi</h2>
+          <p class="sd">80% transformasi berasal dari pola makan. Pilih nutrisi, bukan hanya rasa.</p>
+        </div>
+      </div>
+      <div class="lang-en">
+        <div class="sec-h c">
+          <p class="sl">Nutrition</p>
+          <h2 class="st">Healthy Foods You Must Eat</h2>
+          <p class="sd">80% of transformation comes from diet. Choose nutrition, not just taste.</p>
+        </div>
+      </div>
+
+      <div class="g3">
+        <article class="ic"><div class="th"><img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600" alt="Salad"></div><div class="ct"><h4 class="lang-id">Salad Ayam Panggang</h4><h4 class="lang-en">Grilled Chicken Salad</h4><p class="lang-id">Dada ayam, selada, tomat, mentimun, dressing minyak zaitun. Tinggi protein, rendah lemak.</p><p class="lang-en">Chicken breast, lettuce, tomato, cucumber, olive oil dressing. High protein, low fat.</p><span class="cal">400–450 kal</span><div class="mac"><span>Protein 35g</span><span>Carbs 15g</span><span>Fat 18g</span></div></div></article>
+
+        <article class="ic"><div class="th"><img src="https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=600" alt="Oatmeal"></div><div class="ct"><h4>Oatmeal, Banana, Almond</h4><p class="lang-id">Serat tinggi, energi alami, lemak sehat. Sarapan ideal.</p><p class="lang-en">High fiber, natural energy, healthy fats. The ideal breakfast.</p><span class="cal">320–380 kal</span><div class="mac"><span>Protein 12g</span><span>Carbs 55g</span><span>Fiber 7g</span></div></div></article>
+
+        <article class="ic"><div class="th"><img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600" alt="Salmon"></div><div class="ct"><h4 class="lang-id">Salmon, Nasi Merah, Brokoli</h4><h4 class="lang-en">Salmon, Brown Rice, Broccoli</h4><p class="lang-id">Omega-3, protein, karbohidrat kompleks, serat dalam satu piring seimbang.</p><p class="lang-en">Omega-3, protein, complex carbs, and fiber in one balanced plate.</p><span class="cal">500–550 kal</span><div class="mac"><span>Protein 40g</span><span>Carbs 45g</span><span>Omega-3</span></div></div></article>
+
+        <article class="ic"><div class="th"><img src="https://images.unsplash.com/photo-1590301157890-4810ed352733?w=600" alt="Smoothie"></div><div class="ct"><h4>Smoothie Bowl Berry</h4><p class="lang-id">Yogurt, berry, granola, chia seed. Segar dan kaya antioksidan.</p><p class="lang-en">Yogurt, berries, granola, chia seeds. Fresh and rich in antioxidants.</p><span class="cal">350–420 kal</span><div class="mac"><span>Protein 15g</span><span>Fiber 9g</span><span>Antioxidants</span></div></div></article>
+
+        <article class="ic"><div class="th"><img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600" alt="Avocado"></div><div class="ct"><h4>Avocado Toast + Egg</h4><p class="lang-id">Roti gandum, alpukat, telur. Karbohidrat kompleks + lemak sehat + protein.</p><p class="lang-en">Whole wheat bread, avocado, egg. Complex carbs + healthy fat + protein.</p><span class="cal">300–350 kal</span><div class="mac"><span>Protein 15g</span><span>Fat 18g</span><span>Fiber 7g</span></div></div></article>
+
+        <article class="ic"><div class="th"><img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600" alt="Yogurt"></div><div class="ct"><h4>Greek Yogurt + Fruit</h4><p class="lang-id">Tinggi protein, probiotik. Buah segar dan madu untuk rasa manis alami.</p><p class="lang-en">High protein, probiotics. Fresh fruit and honey for natural sweetness.</p><span class="cal">220–280 kal</span><div class="mac"><span>Protein 20g</span><span>Probiotics</span><span>Vitamin C</span></div></div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SELF-CARE -->
+  <section id="selfcare" style="background:var(--sand);">
+    <div class="con">
+
+      <div class="sc-ban">
+        <p class="ov lang-id">Pengingat lembut</p>
+        <p class="ov lang-en">A gentle reminder</p>
+        <h2>Take Care of Yourself</h2>
+        <p class="lang-id">Merawat diri bukan egois. Ini tentang memastikan Anda punya cukup energi dan ketenangan untuk menjalani hidup dengan baik.</p>
+        <p class="lang-en">Self-care isn't selfish. It's about making sure you have enough energy and peace to live your life well.</p>
+      </div>
+
+      <div class="cd" data-a="blush">
+        <!-- ID -->
+        <div class="lang-id">
+          <h2>Mengapa Self-Care Penting</h2>
+          <p>Self-care adalah aktivitas sadar untuk menjaga kesehatan fisik, mental, dan emosional. Bukan kemewahan — ini kebutuhan.</p>
+          <h3>Perawatan Fisik</h3><p>Fondasi dari segala bentuk perawatan diri.</p>
+          <h4>Tidur 7-8 Jam</h4><p>Saat tidur, tubuh memperbaiki sel, otak memproses memori, imun diperkuat.</p>
+          <h4>Hidrasi Cukup</h4><p>Dehidrasi ringan menyebabkan sakit kepala, kelelahan, dan penurunan konsentrasi.</p>
+          <h4>Bergerak Setiap Hari</h4><p>Tidak harus intens. Jalan kaki atau stretching sudah cukup.</p>
+          <h4>Makan dengan Sadar</h4><p>Pilih nutrisi, nikmati prosesnya.</p>
+          <h3>Perawatan Mental</h3><p>Pikiran sehat memungkinkan keputusan lebih baik.</p>
+          <h4>Berikan Jeda untuk Pikiran</h4><p>Otak kelelahan butuh istirahat. Duduk tenang beberapa menit sudah membantu.</p>
+          <h4>Batasi Konsumsi Digital</h4><p>Terlalu banyak informasi meningkatkan kecemasan.</p>
+          <h4>Belajar Bilang Tidak</h4><p>Menolak saat kelelahan menghargai batas diri sendiri.</p>
+          <h4>Tulis Pikiran Anda</h4><p>Journaling memahami emosi dan melepaskan beban.</p>
+          <h3>Perawatan Emosional</h3><p>Emosi sehat memengaruhi hubungan dan ketangguhan.</p>
+          <h4>Terima Semua Emosi</h4><p>Biarkan diri merasakan tanpa menghakimi.</p>
+          <h4>Pilih Lingkungan Positif</h4><p>Habiskan waktu dengan orang yang membuat Anda merasa dihargai.</p>
+          <h4>Lakukan yang Membuat Tenang</h4><p>Membaca, musik, memasak — apapun yang membuat hati lebih ringan.</p>
+          <h4>Hargai Diri Sendiri</h4><p>Akui pencapaian Anda. Anda sudah melakukan yang terbaik.</p>
+          <h3>Perawatan Spiritual</h3><p>Menemukan makna dan ketenangan yang lebih dalam.</p>
+          <h4>Meditasi</h4><p>5-10 menit duduk tenang dengan fokus napas.</p>
+          <h4>Praktik Syukur</h4><p>Tulis 3 hal disyukuri setiap hari.</p>
+          <h4>Waktu di Alam</h4><p>15-30 menit di luar ruangan menurunkan stres.</p>
+          <h4>Doa atau Ibadah</h4><p>Memberikan ketenangan batin dan kekuatan.</p>
+          <div class="co co-b"><strong>Pengingat</strong><p>Self-care tidak harus mewah. Kadang itu sesederhana tidur lebih awal atau minum air.</p></div>
+        </div>
+
+        <!-- EN -->
+        <div class="lang-en">
+          <h2>Why Self-Care Matters</h2>
+          <p>Self-care is the conscious practice of maintaining your physical, mental, and emotional health. Not a luxury — a necessity.</p>
+          <h3>Physical Self-Care</h3><p>The foundation of all forms of self-care.</p>
+          <h4>Sleep 7-8 Hours</h4><p>During sleep, your body repairs cells, brain processes memories, and immune system strengthens.</p>
+          <h4>Stay Hydrated</h4><p>Even mild dehydration causes headaches, fatigue, and decreased concentration.</p>
+          <h4>Move Every Day</h4><p>It doesn't have to be intense. Walking or stretching is enough.</p>
+          <h4>Eat Mindfully</h4><p>Choose nutrition, enjoy the process.</p>
+          <h3>Mental Self-Care</h3><p>A healthy mind enables better decisions.</p>
+          <h4>Give Your Mind a Break</h4><p>An exhausted brain needs rest. A few minutes of quiet sitting helps.</p>
+          <h4>Limit Digital Consumption</h4><p>Too much information increases anxiety.</p>
+          <h4>Learn to Say No</h4><p>Declining when exhausted honors your own limits.</p>
+          <h4>Write Your Thoughts</h4><p>Journaling helps understand emotions and release burden.</p>
+          <h3>Emotional Self-Care</h3><p>Healthy emotions affect relationships and resilience.</p>
+          <h4>Accept All Emotions</h4><p>Let yourself feel without judging.</p>
+          <h4>Choose Positive Environments</h4><p>Spend time with people who make you feel valued.</p>
+          <h4>Do What Brings Peace</h4><p>Reading, music, cooking — anything that lightens your heart.</p>
+          <h4>Appreciate Yourself</h4><p>Acknowledge your achievements. You're doing your best.</p>
+          <h3>Spiritual Self-Care</h3><p>Finding deeper meaning and inner peace.</p>
+          <h4>Meditation</h4><p>5-10 minutes of quiet sitting, focusing on breath.</p>
+          <h4>Gratitude Practice</h4><p>Write 3 things you're grateful for each day.</p>
+          <h4>Time in Nature</h4><p>15-30 minutes outdoors reduces stress.</p>
+          <h4>Prayer or Worship</h4><p>Provides inner calm and strength.</p>
+          <div class="co co-b"><strong>Remember</strong><p>Self-care doesn't have to be luxurious. Sometimes it's as simple as sleeping earlier or drinking water.</p></div>
+        </div>
+      </div>
+
+      <!-- BREATHING -->
+      <div class="cd" data-a="water">
+        <h2 class="lang-id">Latihan Pernapasan — 4-7-8</h2>
+        <h2 class="lang-en">Breathing Exercise — 4-7-8</h2>
+        <p class="lang-id">Tarik napas 4 detik, tahan 7 detik, hembuskan 8 detik. Untuk kecemasan dan membantu tidur.</p>
+        <p class="lang-en">Inhale 4 seconds, hold 7 seconds, exhale 8 seconds. For anxiety and better sleep.</p>
+        <div class="br-w">
+          <div class="br">breathe</div>
+          <p class="lang-id" style="font-size:12px;color:var(--ink-m);">Ikuti ritme lingkaran</p>
+          <p class="lang-en" style="font-size:12px;color:var(--ink-m);">Follow the circle's rhythm</p>
+        </div>
+      </div>
+
+      <!-- SC CARDS -->
+      <div class="g3" style="margin-top:8px;">
+        <div class="scc"><div class="sci b">🛁</div><h3 class="lang-id">Mandi Hangat</h3><h3 class="lang-en">Warm Bath</h3><p class="lang-id">Air hangat 15-20 menit. Merelaksasi otot dan pikiran.</p><p class="lang-en">Warm water 15-20 min. Relaxes muscles and mind.</p><h4 class="lang-id">Kapan</h4><h4 class="lang-en">When</h4><p class="lang-id">Malam hari untuk kualitas tidur lebih baik.</p><p class="lang-en">Evening for better sleep quality.</p></div>
+        <div class="scc"><div class="sci s">🌿</div><h3 class="lang-id">Waktu di Alam</h3><h3 class="lang-en">Time in Nature</h3><p class="lang-id">15-30 menit outdoor. Jalan, taman, atau memandang pohon.</p><p class="lang-en">15-30 min outdoors. Walk, park, or simply watch trees.</p><h4 class="lang-id">Manfaat</h4><h4 class="lang-en">Benefits</h4><p class="lang-id">Kortisol turun, mood naik, perspektif baru.</p><p class="lang-en">Cortisol drops, mood improves, new perspective.</p></div>
+        <div class="scc"><div class="sci u">📖</div><h3>Journaling</h3><p class="lang-id">Tulis perasaan dan hal disyukuri. 5-10 menit per malam.</p><p class="lang-en">Write feelings and gratitude. 5-10 min per night.</p><h4 class="lang-id">Apa yang Ditulis</h4><h4 class="lang-en">What to Write</h4><p class="lang-id">3 hal disyukuri, perasaan hari ini, satu hal baik.</p><p class="lang-en">3 things grateful for, today's feelings, one good thing.</p></div>
+        <div class="scc"><div class="sci p">🎵</div><h3 class="lang-id">Musik</h3><h3 class="lang-en">Music</h3><p class="lang-id">Playlist relaksasi tanpa distraksi.</p><p class="lang-en">Relaxation playlist without distractions.</p><h4 class="lang-id">Saran</h4><h4 class="lang-en">Tip</h4><p class="lang-id">Tanpa lirik agar pikiran benar-benar istirahat.</p><p class="lang-en">Without lyrics so your mind truly rests.</p></div>
+        <div class="scc"><div class="sci w">☕</div><h3 class="lang-id">Momen Tenang</h3><h3 class="lang-en">Quiet Moment</h3><p class="lang-id">Teh atau kopi pagi tanpa gadget.</p><p class="lang-en">Morning tea or coffee without gadgets.</p><h4 class="lang-id">Mengapa</h4><h4 class="lang-en">Why</h4><p class="lang-id">Melatih mindfulness dan memulai hari dengan sadar.</p><p class="lang-en">Trains mindfulness and starts the day consciously.</p></div>
+        <div class="scc"><div class="sci b">🎨</div><h3 class="lang-id">Ekspresi Kreatif</h3><h3 class="lang-en">Creative Expression</h3><p class="lang-id">Menggambar, menulis, memasak — pikiran mengalir bebas.</p><p class="lang-en">Drawing, writing, cooking — let your mind flow freely.</p><h4 class="lang-id">Manfaat</h4><h4 class="lang-en">Benefits</h4><p class="lang-id">Emosi tersalurkan, muncul rasa puas.</p><p class="lang-en">Emotions channeled, sense of fulfillment.</p></div>
+      </div>
+
+      <!-- ROUTINE -->
+      <div class="cd" data-a="blush" style="margin-top:28px;">
+        <h2 class="lang-id">Rutinitas Harian Self-Care</h2>
+        <h2 class="lang-en">Self-Care Daily Routine</h2>
+        <p class="lang-id">Contoh rutinitas yang bisa diadaptasi sesuai jadwal Anda.</p>
+        <p class="lang-en">An example routine you can adapt to your schedule.</p>
+        <div class="g3" style="margin-top:20px;">
+          <div class="rc"><h3 class="lang-id">Pagi</h3><h3 class="lang-en">Morning</h3>
+            <div class="lang-id"><div class="ri"><span class="rt">05:30</span>Bangun, minum air hangat</div><div class="ri"><span class="rt">05:45</span>Meditasi atau doa 5 menit</div><div class="ri"><span class="rt">06:00</span>Olahraga ringan 15-30 menit</div><div class="ri"><span class="rt">06:30</span>Mandi, skincare</div><div class="ri"><span class="rt">07:00</span>Sarapan sehat</div><div class="ri"><span class="rt">07:30</span>Tulis 3 hal disyukuri</div></div>
+            <div class="lang-en"><div class="ri"><span class="rt">05:30</span>Wake up, drink warm water</div><div class="ri"><span class="rt">05:45</span>Meditation or prayer 5 min</div><div class="ri"><span class="rt">06:00</span>Light exercise 15-30 min</div><div class="ri"><span class="rt">06:30</span>Shower, skincare</div><div class="ri"><span class="rt">07:00</span>Healthy breakfast</div><div class="ri"><span class="rt">07:30</span>Write 3 things grateful for</div></div>
+          </div>
+          <div class="rc"><h3 class="lang-id">Siang</h3><h3 class="lang-en">Afternoon</h3>
+            <div class="lang-id"><div class="ri"><span class="rt">12:00</span>Makan siang seimbang</div><div class="ri"><span class="rt">12:30</span>Jalan kaki 10-15 menit</div><div class="ri"><span class="rt">13:00</span>Istirahat singkat 15 menit</div><div class="ri"><span class="rt">15:00</span>Camilan sehat</div><div class="ri"><span class="rt">15:30</span>Air putih, peregangan</div><div class="ri"><span class="rt">16:00</span>Hal menyenangkan 30 menit</div></div>
+            <div class="lang-en"><div class="ri"><span class="rt">12:00</span>Balanced lunch</div><div class="ri"><span class="rt">12:30</span>Walk 10-15 min</div><div class="ri"><span class="rt">13:00</span>Short rest 15 min</div><div class="ri"><span class="rt">15:00</span>Healthy snack</div><div class="ri"><span class="rt">15:30</span>Water, stretching</div><div class="ri"><span class="rt">16:00</span>Something enjoyable 30 min</div></div>
+          </div>
+          <div class="rc"><h3 class="lang-id">Malam</h3><h3 class="lang-en">Evening</h3>
+            <div class="lang-id"><div class="ri"><span class="rt">18:00</span>Olahraga (jika belum)</div><div class="ri"><span class="rt">19:00</span>Makan malam ringan</div><div class="ri"><span class="rt">20:00</span>Hobi atau buku</div><div class="ri"><span class="rt">21:00</span>Skincare, mandi hangat</div><div class="ri"><span class="rt">21:30</span>Refleksi dan journaling</div><div class="ri"><span class="rt">22:00</span>Tidur</div></div>
+            <div class="lang-en"><div class="ri"><span class="rt">18:00</span>Exercise (if not done)</div><div class="ri"><span class="rt">19:00</span>Light dinner</div><div class="ri"><span class="rt">20:00</span>Hobby or reading</div><div class="ri"><span class="rt">21:00</span>Skincare, warm bath</div><div class="ri"><span class="rt">21:30</span>Reflection and journaling</div><div class="ri"><span class="rt">22:00</span>Sleep</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- QUOTE 2 -->
+  <div class="qu">
+    <blockquote>You can't pour from an empty cup. Take care of yourself first.</blockquote>
+    <div class="dv"></div>
+    <cite class="lang-id">Anda tidak bisa memberi dari gelas yang kosong</cite>
+    <cite class="lang-en">You can't give from an empty cup</cite>
+  </div>
+
+  <!-- START -->
+  <section id="start">
+    <div class="con">
+      <div class="lang-id">
+        <div class="sec-h">
+          <p class="sl">Rencana Aksi</p>
+          <h2 class="st">Cara Memulai Transformasi Anda</h2>
+          <p class="sd">Bukan seberapa besar langkah pertama — tetapi seberapa konsisten Anda melangkah.</p>
+        </div>
+      </div>
+      <div class="lang-en">
+        <div class="sec-h">
+          <p class="sl">Action Plan</p>
+          <h2 class="st">How to Start Your Transformation</h2>
+          <p class="sd">It's not about how big your first step is — but how consistently you keep stepping.</p>
+        </div>
+      </div>
+
+      <div class="cd" data-a="clay">
+        <div class="lang-id">
+          <h2>Langkah Memulai</h2>
+          <p>Transformasi tidak perlu perubahan drastis. Mulai dari hal kecil yang bisa dilakukan hari ini.</p>
+          <h3>Tentukan Tujuan</h3><p>Tujuan spesifik dan realistis menjaga fokus dan motivasi.</p>
+          <h4>Metode SMART</h4><p>Specific, Measurable, Achievable, Relevant, Time-bound. "Jalan kaki 30 menit setiap pagi selama 30 hari."</p>
+          <h4>Target Bertahap</h4><p>Pendek: 3× olahraga minggu ini. Panjang: turunkan 5 kg dalam 3 bulan.</p>
+          <h3>Bangun Rutinitas</h3><p>Kebiasaan bertahun-tahun lebih berharga daripada program intens seminggu.</p>
+          <h4>Jadwalkan Olahraga</h4><p>Perlakukan seperti janji penting yang tidak bisa dibatalkan.</p>
+          <h4>Siapkan Makanan</h4><p>Meal prep di awal minggu menghindari makanan tidak sehat.</p>
+          <h3>Tetap Konsisten</h3><p>Konsistensi mengalahkan motivasi.</p>
+          <h4>Terima Ketidaksempurnaan</h4><p>Satu hari buruk bukan berarti gagal. Kembali besok.</p>
+          <h4>Cari Dukungan</h4><p>Partner atau komunitas membuat perjalanan lebih menyenangkan.</p>
+        </div>
+        <div class="lang-en">
+          <h2>Steps to Start</h2>
+          <p>Transformation doesn't require drastic changes. Start with small things you can do today.</p>
+          <h3>Set Clear Goals</h3><p>Specific and realistic goals maintain focus and motivation.</p>
+          <h4>SMART Method</h4><p>Specific, Measurable, Achievable, Relevant, Time-bound. "Walk 30 min every morning for 30 days."</p>
+          <h4>Gradual Targets</h4><p>Short: exercise 3× this week. Long: lose 5 kg in 3 months.</p>
+          <h3>Build a Routine</h3><p>Habits maintained for years are worth more than intense programs lasting a week.</p>
+          <h4>Schedule Exercise</h4><p>Treat it like an important appointment that can't be canceled.</p>
+          <h4>Prepare Meals</h4><p>Weekly meal prep avoids unhealthy food and saves time.</p>
+          <h3>Stay Consistent</h3><p>Consistency beats motivation.</p>
+          <h4>Accept Imperfection</h4><p>One bad day doesn't mean failure. Come back tomorrow.</p>
+          <h4>Find Support</h4><p>A partner or community makes the journey more enjoyable.</p>
+        </div>
+      </div>
+
+      <div class="cd" data-a="sage">
+        <h2 class="lang-id">Mulai Hari Ini</h2>
+        <h2 class="lang-en">Start Today</h2>
+        <p class="lang-id">Tidak perlu menunggu waktu sempurna:</p>
+        <p class="lang-en">No need to wait for the perfect time:</p>
+        <ul class="ck lang-id">
+          <li>Minum air putih 2 liter penuh hari ini</li>
+          <li>Berjalan kaki 15-30 menit</li>
+          <li>Ganti camilan dengan buah segar</li>
+          <li>Tidur 30 menit lebih awal malam ini</li>
+          <li>Lakukan satu hal yang membuat Anda tenang</li>
+          <li>Tulis satu tujuan kesehatan untuk minggu ini</li>
+        </ul>
+        <ul class="ck lang-en">
+          <li>Drink a full 2 liters of water today</li>
+          <li>Walk for 15-30 minutes</li>
+          <li>Replace snacks with fresh fruit</li>
+          <li>Sleep 30 minutes earlier tonight</li>
+          <li>Do one thing that brings you peace</li>
+          <li>Write one health goal for this week</li>
+        </ul>
+        <div class="co co-s">
+          <strong class="lang-id">Satu hal</strong>
+          <strong class="lang-en">One thing</strong>
+          <p class="lang-id">Transformasi adalah proses panjang. Kemajuan yang lambat tetap kemajuan.</p>
+          <p class="lang-en">Transformation is a long process. Slow progress is still progress.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVOID -->
+  <section style="background:var(--sand);">
+    <div class="con">
+      <div class="cd" data-a="plum">
+        <div class="lang-id">
+          <h2>Yang Perlu Dihindari</h2>
+          <p>Selain menambah kebiasaan baik, kurangi yang menghambat.</p>
+          <h3>Makanan yang Perlu Dibatasi</h3>
+          <h4>Makanan Cepat Saji</h4><p>Kalori tinggi, lemak trans, sodium berlebih, minim nutrisi.</p>
+          <h4>Minuman Bergula</h4><p>Soda, minuman kemasan — lonjakan gula darah dan kenaikan berat badan.</p>
+          <h4>Makanan Olahan</h4><p>Kue, roti putih, permen — membuat lapar lebih cepat.</p>
+          <h4>Gorengan Berlebihan</h4><p>Lemak jenuh tinggi. Pertimbangkan panggang, kukus, atau rebus.</p>
+          <h3>Kebiasaan yang Perlu Diperhatikan</h3>
+          <h4>Kurang Tidur</h4><p>Metabolisme terganggu, hormon lapar naik, emosi tidak stabil.</p>
+          <h4>Terlalu Lama Duduk</h4><p>Risiko obesitas dan nyeri punggung. Bergerak setiap 1-2 jam.</p>
+          <h4>Makan Terlalu Malam</h4><p>Pencernaan terganggu dan berat badan lebih mudah naik.</p>
+          <div class="co co-p"><strong>Perspektif</strong><p>Membatasi bukan melarang. Kuncinya keseimbangan.</p></div>
+        </div>
+        <div class="lang-en">
+          <h2>What to Avoid</h2>
+          <p>Besides adding good habits, reduce what holds you back.</p>
+          <h3>Foods to Limit</h3>
+          <h4>Fast Food</h4><p>High calories, trans fats, excessive sodium, minimal nutrition.</p>
+          <h4>Sugary Drinks</h4><p>Soda, packaged drinks — blood sugar spikes and weight gain.</p>
+          <h4>Processed Food</h4><p>Cakes, white bread, candy — makes you hungry faster.</p>
+          <h4>Excessive Fried Food</h4><p>High saturated fat. Consider baking, steaming, or boiling.</p>
+          <h3>Habits to Watch</h3>
+          <h4>Lack of Sleep</h4><p>Disrupted metabolism, increased hunger hormones, unstable emotions.</p>
+          <h4>Sitting Too Long</h4><p>Increased obesity risk and back pain. Move every 1-2 hours.</p>
+          <h4>Late Night Eating</h4><p>Disrupted digestion and easier weight gain.</p>
+          <div class="co co-p"><strong>Perspective</strong><p>Limiting isn't forbidding. Balance is the key.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE 3 -->
+  <div class="qu">
+    <blockquote>Your body can stand almost anything. It's your mind that you have to convince.</blockquote>
+    <div class="dv"></div>
+    <cite class="lang-id">Tubuh Anda mampu. Mulailah dari pikiran.</cite>
+    <cite class="lang-en">Your body is capable. Start with your mind.</cite>
+  </div>
+
+  <footer>
+    <div class="fl">HealthyLife</div>
+    <p>Transform Your Body, Change Your Life © 2025</p>
+    <p class="lang-id">Rawat diri Anda. Anda layak mendapatkannya. Dibuat oleh adindexz .</p>
+    <p class="lang-en">Take care of yourself. You deserve it.  Create by adindexz.</p>
+  </footer>
+
+  <!-- LANGUAGE TOGGLE SCRIPT -->
+  <script>
+    function setLang(lang) {
+      const body = document.body;
+      const btnId = document.getElementById('btn-id');
+      const btnEn = document.getElementById('btn-en');
+
+      if (lang === 'en') {
+        body.classList.add('en');
+        btnEn.classList.add('active');
+        btnId.classList.remove('active');
+        document.documentElement.lang = 'en';
+      } else {
+        body.classList.remove('en');
+        btnId.classList.add('active');
+        btnEn.classList.remove('active');
+        document.documentElement.lang = 'id';
+      }
+    }
+  </script>
+
+</body>
+</html>
